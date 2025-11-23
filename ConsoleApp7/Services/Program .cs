@@ -29,9 +29,11 @@ namespace Core
                     Console.WriteLine("3. Search Employee");
                     Console.WriteLine("4. Update Employee");
                     Console.WriteLine("5. List Employees");
-                    Console.WriteLine("6. Sort names' Employees");
+                    Console.WriteLine("6. Sort  Employees");
                     Console.WriteLine("7. Filter salarie's Employees");
-                    Console.WriteLine("8. Exit");
+                    Console.WriteLine("8. Sort names' Employees");
+                    Console.WriteLine("9 to save file");
+                    Console.WriteLine("0. Exit");
 
                     Console.Write("Choose: ");
                     int choice = Convert.ToInt32(Console.ReadLine());
@@ -95,9 +97,12 @@ namespace Core
                             employeeService.FilterBySalaryEmployees();
                             Console.WriteLine("Max and Min");
                             break;
-                        case 9:
-                            Console.WriteLine("Program finsihed");
-                            break;
+                        case 9: 
+                            {
+                                employeeService.SaveToFile();
+                                Console.WriteLine("Data saved. Exiting...");
+                                break;
+                            }
                         default:
                             Console.WriteLine("Invalid input");
                             break;
